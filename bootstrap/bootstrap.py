@@ -48,7 +48,7 @@ def main():
         subprocess.check_output(['apt-get', 'install', '--yes', 'python3', 'python3-venv'], stderr=subprocess.STDOUT)
         logger.info('Installed python & virtual environment')
         os.makedirs(hub_prefix, exist_ok=True)
-        subprocess.check_output([python_bootstrap, '-m', 'venv', hub_prefix], stderr=subprocess.STDOUT)
+        subprocess.check_output([python_bootstrap, '-m', 'venv', '--copies', hub_prefix], stderr=subprocess.STDOUT)
         logger.info('Set up hub virtual environment')
 
     if initial_setup:
